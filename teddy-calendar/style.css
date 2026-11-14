@@ -5,17 +5,24 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
+  width: 100%;
+  min-width: 0;
   margin: 0;
-  padding: 8px;
+}
+
+body {
+  padding: 4px;
   background: transparent;
   font-family: 'Quicksand', sans-serif;
 }
 
 .calendar-widget {
+  width: 100%;
   max-width: 350px;
-  margin: auto;
-  padding: 23px;
+  min-width: 0;
+  margin: 0 auto;
+  padding: clamp(12px, 5%, 23px);
   background: #F5EDE3;
   border: 1px solid #E3D3C1;
   border-radius: 20px;
@@ -71,7 +78,8 @@ body {
 .weekdays,
 .calendar-days {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  width: 100%;
   text-align: center;
 }
 
@@ -92,7 +100,7 @@ body {
 /* CALENDAR DATES */
 
 .day {
-  width: 30px;
+  width: min(30px, 100%);
   height: 30px;
   margin: auto;
   display: grid;
@@ -143,4 +151,69 @@ footer {
   color: #A3866C;
   font-size: 10px;
   letter-spacing: .3px;
+}
+
+
+/* =================================
+   COMPACT MINIMAL CALENDAR
+   ================================= */
+
+@media (max-width: 280px) {
+
+  /* Smaller calendar card */
+  .calendar-widget {
+    padding: 12px;
+    border-radius: 15px;
+  }
+
+  /* Hide top teddy */
+  .calendar-header {
+    display: none;
+  }
+
+  /* Month navigation */
+  .calendar-nav {
+    margin-bottom: 13px;
+    font-size: 11px;
+  }
+
+  .calendar-nav button {
+    width: 25px;
+    height: 25px;
+    font-size: 16px;
+  }
+
+  /* Weekday labels */
+  .weekdays {
+    margin-bottom: 8px;
+  }
+
+  .weekdays span {
+    font-size: 8px;
+  }
+
+  /* Date grid */
+  .calendar-days {
+    row-gap: 4px;
+  }
+
+  .day {
+    width: 26px;
+    height: 26px;
+    font-size: 10px;
+  }
+
+  /* Smaller teddy date marker */
+  .day.today::before {
+    width: 8px;
+    height: 8px;
+    top: -2px;
+    left: 2px;
+    box-shadow: 14px 0 0 #987253;
+  }
+
+  /* Hide bottom footer completely */
+  footer {
+    display: none;
+  }
 }
