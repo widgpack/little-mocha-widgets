@@ -1,0 +1,146 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Quicksand:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 8px;
+  background: transparent;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.calendar-widget {
+  max-width: 350px;
+  margin: auto;
+  padding: 23px;
+  background: #F5EDE3;
+  border: 1px solid #E3D3C1;
+  border-radius: 20px;
+  color: #70513B;
+}
+
+/* CENTRED TEDDY HEADER */
+
+.calendar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+  padding: 2px 0 5px;
+}
+
+.bear {
+  font-size: 48px;
+  line-height: 1.2;
+  color: #98765A;
+  text-align: center;
+}
+
+/* MONTH NAVIGATION */
+
+.calendar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 19px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.calendar-nav button {
+  background: #EADCCE;
+  border: none;
+  border-radius: 50%;
+  color: #76543D;
+  width: 29px;
+  height: 29px;
+  cursor: pointer;
+  font-size: 19px;
+  transition: 0.2s;
+}
+
+.calendar-nav button:hover {
+  background: #D8BDA3;
+}
+
+/* WEEKDAYS */
+
+.weekdays,
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+}
+
+.weekdays {
+  margin-bottom: 12px;
+}
+
+.weekdays span {
+  font-size: 9px;
+  font-weight: 700;
+  color: #AD9175;
+}
+
+.calendar-days {
+  row-gap: 8px;
+}
+
+/* CALENDAR DATES */
+
+.day {
+  width: 30px;
+  height: 30px;
+  margin: auto;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 11px;
+  color: #80644C;
+}
+
+.day.today {
+  position: relative;
+  isolation: isolate;
+  background: #987253;
+  color: #FFF9F1;
+  font-weight: 700;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* LITTLE TEDDY EARS */
+
+.day.today::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #987253;
+  border-radius: 50%;
+  top: -3px;
+  left: 2px;
+  box-shadow: 16px 0 0 #987253;
+  z-index: -1;
+}
+
+.day:hover:not(.empty) {
+  background: #E5D3BF;
+}
+
+/* FOOTER */
+
+footer {
+  border-top: 1px solid #E5D6C5;
+  margin-top: 21px;
+  padding-top: 14px;
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  color: #A3866C;
+  font-size: 10px;
+  letter-spacing: .3px;
+}

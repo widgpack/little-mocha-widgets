@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Mocha Calendar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="calendar-widget">
+
+    <header class="calendar-header">
+        <div class="bear">ʕ•ᴥ•ʔ</div>
+    </header>
+
+    <div class="calendar-nav">
+        <button id="prev" aria-label="Previous month">‹</button>
+        <span id="month-label"></span>
+        <button id="next" aria-label="Next month">›</button>
+    </div>
+
+    <div class="weekdays">
+        <span>MO</span>
+        <span>TU</span>
+        <span>WE</span>
+        <span>TH</span>
+        <span>FR</span>
+        <span>SA</span>
+        <span>SU</span>
+    </div>
+
+    <div id="calendar-days" class="calendar-days"></div>
+
+    <footer>
+        <span>♡</span>
+        <span id="today-label">One day at a time.</span>
+        <span>♡</span>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
