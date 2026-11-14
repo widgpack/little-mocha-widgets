@@ -5,24 +5,28 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
+  width: 100%;
+  min-width: 0;
   margin: 0;
-  padding: 12px;
+}
+
+body {
+  padding: 4px;
   background: transparent;
   font-family: 'Quicksand', sans-serif;
 }
 
 .widget {
   width: 100%;
-  max-width: 340px;
+  max-width: 350px;
+  min-width: 0;
   margin: 0 auto;
-  padding: 25px 20px;
-
+  padding: clamp(12px, 5%, 23px);
   background: #F5EDE3;
-  color: #70513B;
-
   border: 1px solid #E3D3C1;
-  border-radius: 22px;
+  border-radius: 20px;
+  color: #70513B;
 
   text-align: center;
 
